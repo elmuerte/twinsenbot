@@ -1,7 +1,9 @@
 TwinsenBot
 ==========
 
-Twitter bot posting lines from the LBA games.
+Twitter bot posting lines from the LBA games. The quotes are retrieved from the Magicball Network: http://www.magicball.net/gamequotes
+
+The bot in action: https://twitter.com/twinsen_txt
 
 This bot is inspired by the WAD BOT by JP LeBreton: https://bitbucket.org/JPLeBreton/wadbot
 
