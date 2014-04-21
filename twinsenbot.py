@@ -27,6 +27,9 @@ MAX_TRIES=100
 # Tags to use for the game quotes
 GAME_TAGS = {'lba1': '#LBA', 'lba2' : '#LBA2'}
 
+# Load the config
+execfile(CONFIG_FILE)
+
 
 def retrieve_quote():
     """Retrieve a quote from the given url"""
@@ -46,6 +49,10 @@ def format_quote(quote):
     return quoteText + '\n' + GAME_TAGS[quote.find('game').get('id')]
 
 
+
+auth = tweepy.OAuthHandler(api_key, api_secret)
+auth.set_access_token(access_token, access_token_secret)
+
 seen_file = open(SEEN_FILE, 'a+')
 seenlist = seen_file.readlines()
 
@@ -60,6 +67,8 @@ while useQuote == None:
             useQuote=quote
         elif (attempt >= MAX_TRIES):
             useQuote=quote
+        else:
+            print("Already saw quote: "+quote.get('id'))
 
 if (useQuote == None):
     print("No new quote found")
@@ -70,7 +79,9 @@ twitMsg=format_quote(quote)
 
 print('Posting quote: '+quote.get('id'))
 
-print twitMsg
+# Posting the tweet
+api = tweepy.API(auth)
+api.update_status(twitMsg)
 
 
 seen_file.write(quote.get('id')+'\n');
