@@ -21,8 +21,10 @@ In order to get the user's OAuth token, you need to run the following in an inte
     >>> print auth.get_authorization_url()
     https://api.twitter.com/oauth/authorize?oauth_token=__something__
 
-Visit this page and authenticate with the twitter user you want to use.
+Visit this page and authenticate with the twitter user you want to use, and get the PIN to use in the next command.
 
-    >>> print auth.get_access_token(8521080)
+    >>> print auth.get_access_token(__the_pin_here__)
     oauth_token_secret=__something__&oauth_token=__something__
     >>>
+
+Or, simply create the twitter application with the target account so you can create OAuth tokens directly from the application management page.
