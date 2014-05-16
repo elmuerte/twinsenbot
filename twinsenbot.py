@@ -10,6 +10,7 @@
 import urllib2
 import xml.etree.ElementTree as ET
 import tweepy
+import re
 
 
 # The URL where we retrieve random quotes from
@@ -43,7 +44,7 @@ def is_unseen(id):
 
 def format_quote(quote):
     """Format the quote to a twitter message"""
-    quoteText = quote.findtext('text');
+    quoteText = re.sub(r'\s+', ' ', quote.findtext('text').strip());
     if (quoteText == None):
         return None
     return quoteText + '\n' + GAME_TAGS[quote.find('game').get('id')]
