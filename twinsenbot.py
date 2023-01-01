@@ -14,7 +14,7 @@ import re
 
 
 # The URL where we retrieve random quotes from
-QUOTE_URL = 'http://www.magicball.net/gamequotes/xml?minlength=15&maxlength=135'
+QUOTE_URL = 'https://www.magicball.net/gamequotes/xml?minlength=15&maxlength=275'
 
 # Quotes which have already been posted will be logged here
 SEEN_FILE = './seen-quotes.db'
