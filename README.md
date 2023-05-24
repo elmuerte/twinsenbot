@@ -1,15 +1,16 @@
-TwinsenBot
-==========
+# TwinsenBot
 
-Twitter bot posting lines from the LBA games. The quotes are retrieved from the Magicball Network: http://www.magicball.net/gamequotes
+Twitter/Mastodon bot posting lines from the LBA games. The quotes are retrieved from the Magicball Network: http://www.magicball.net/gamequotes
 
-The bot in action: https://twitter.com/twinsen_txt
+The bot in action: 
+- https://twitter.com/twinsen_txt
+- https://botsin.space/@twinsen
 
 This bot is inspired by the WAD BOT by JP LeBreton: https://bitbucket.org/JPLeBreton/wadbot
 
+# Twitter version
 
-Getting the OAuth tokens
-------------------------
+## Getting the OAuth tokens
 
 In order to get the user's OAuth token, you need to run the following in an interactive python session.
 
@@ -28,3 +29,7 @@ Visit this page and authenticate with the twitter user you want to use, and get 
     >>>
 
 Or, simply create the twitter application with the target account so you can create OAuth tokens directly from the application management page.
+
+# Mastodon version
+
+Put the application access token in a file name `token.secret`.
