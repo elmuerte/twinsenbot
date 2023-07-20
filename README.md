@@ -1,6 +1,6 @@
 # TwinsenBot
 
-Twitter/Mastodon bot posting lines from the LBA games. The quotes are retrieved from the Magicball Network: http://www.magicball.net/gamequotes
+Twitter/Mastodon bot posting lines from the LBA games.
 
 The bot in action: 
 - https://twitter.com/twinsen_txt
@@ -33,3 +33,15 @@ Or, simply create the twitter application with the target account so you can cre
 # Mastodon version
 
 Put the application access token in a file name `token.secret`.
+
+# Quotes DB
+
+The quote database was created from the game using one of the available HQR unpackers to
+produce the `.lbt` files. With the LBA Text Views from LBADeCOMP these files were dumped
+to individual text files. 
+
+The `extract-quotes.py` script parses these files to the `quotes.db`. The script is called
+with each file to process as an argument. It assumes the filenames have the following
+format: `<game>/<id> <area>.txt` for example: `lba1/08 Citadel Island.txt`.
+
+So the script was executed as: `./extract-quotes.py lba1/* lba2/*`
